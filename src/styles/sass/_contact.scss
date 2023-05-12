@@ -1,0 +1,18 @@
+address {
+    margin-top: 1em;
+    font-style: normal;
+}
+
+#reach-us {
+    font-size: 18px;
+
+    i {
+        width: 20px;
+    }
+
+    @media #{$small-and-down} {
+        .col {
+            margin-top: 30px;
+        }
+    }
+}

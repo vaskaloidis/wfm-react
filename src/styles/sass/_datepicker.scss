@@ -1,0 +1,40 @@
+.picker__date-display {
+    background: $base-color;
+
+    @if ($color == 'yellow') {
+        color: $black;
+
+        .picker__year-display {
+            color: $black;
+        }
+    }
+}
+
+.picker__weekday-display,
+.picker__day--selected,
+.picker__day--selected:hover,
+.picker--focused .picker__day--selected{
+    background: $dark-color;
+}
+
+.picker__close,
+.picker__today,
+.picker__day.picker__day--today {
+    color: $dark-color;
+}
+
+.picker__nav--prev:hover,
+.picker__nav--next:hover,
+button.picker__today:focus,
+button.picker__clear:focus,
+button.picker__close:focus{
+    background-color: $light-color;
+}
+
+.picker__footer {
+    padding: 5px;
+
+    .btn-flat {
+        letter-spacing: 1px;
+    }
+}

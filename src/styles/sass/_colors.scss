@@ -1,0 +1,13 @@
+$white: #ffffff;
+$black: #000000;
+
+$color: 'red';
+
+
+$base-color: color($color, 'base');
+$dark-color: color($color, 'darken-4');
+$light-color: color($color, 'lighten-5');
+$accent-color: color($color, 'accent-3');
+
+$success: color('light-green', 'accent-3');
+$error: color('red', 'accent-3');

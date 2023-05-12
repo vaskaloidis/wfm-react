@@ -1,0 +1,58 @@
+#menu-tabs-sticky-wrapper {
+    margin-bottom: 100px;
+}
+
+.tabs {
+    margin-bottom: 100px;
+    background: transparent;
+
+    @media #{$small-and-down} {
+        margin-bottom: 50px;
+    }
+
+    .tab {
+        height: 65px;
+        line-height: 65px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        background: transparentize($white, .05);
+        @include transition(all .4s $ease-out-circ);
+
+        @media #{$small-and-down} {
+            font-size: 14px;
+        }
+
+        &:hover {
+            letter-spacing: 4px;
+        }
+
+        a {
+            color: $black;
+
+            &:hover {
+                @if ($color == 'yellow') {
+                    color: $dark-color;
+                } @else {
+                    color: $base-color;
+                }
+
+            }
+        }
+
+    }
+
+    .indicator {
+        bottom: -20px;
+        height: 3px;
+
+        @if ($color == 'yellow') {
+            background-color: $dark-color;
+        } @else {
+            background-color: $base-color;
+        }
+
+        @media #{$small-and-down} {
+            bottom: -10px;
+        }
+    }
+}

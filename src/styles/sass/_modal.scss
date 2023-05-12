@@ -1,0 +1,19 @@
+.modal {
+    background: transparentize($white, .1);
+
+    h4 {
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        @include wave();
+
+        &:after {
+            margin-left: 0;
+        }
+    }
+
+    .modal-footer {
+        background: transparent;
+    }
+}

@@ -1,0 +1,13 @@
+$dir: '../../fonts/bukhari/';
+
+@font-face {
+    font-family: Bukhari;
+    src: url('#{$dir}bukhari_script-webfont.eot');
+    src: url('#{$dir}bukhari_script-webfont.eot?#iefix') format('embedded-opentype'),
+    url('#{$dir}bukhari_script-webfont.woff2') format('woff2'),
+    url('#{$dir}bukhari_script-webfont.woff') format('woff'),
+    url('#{$dir}bukhari_script-webfont.ttf') format('truetype'),
+    url('#{$dir}bukhari_script-webfont.svg#bukhari_scriptregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

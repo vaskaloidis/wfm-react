@@ -1,0 +1,17 @@
+.btn-flat {
+    letter-spacing: 2px;
+}
+
+.btn-large.btn-bordered {
+    line-height: 52px;
+    letter-spacing: 2px;
+    border: 2px solid $white;
+
+    &.black-border:not(.disabled) {
+        border-color: $black;
+    }
+
+    &:hover {
+        letter-spacing: 4px;
+    }
+}

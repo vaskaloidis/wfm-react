@@ -1,0 +1,13 @@
+#gallery {
+    padding: 0;
+
+    .row {
+        margin-bottom: 0;
+    }
+
+    .col {
+        padding: 0;
+        background-size: cover;
+        background-position: center;
+    }
+}

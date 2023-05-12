@@ -1,0 +1,15 @@
+// Used for h2 and events modal titles
+@mixin wave {
+    &:after {
+        content: '';
+        display: block;
+        width: 32 * 5 + 16px;
+        height: 14px;
+        margin: 30px auto;
+        background: url(../../images/wave-white.png) repeat-x -16px top / 32px;
+    }
+
+    &.dark-wave:after {
+        background-image: url(../../images/wave-black.png);
+    }
+}

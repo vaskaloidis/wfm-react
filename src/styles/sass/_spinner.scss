@@ -1,0 +1,61 @@
+#spinner-overlay {
+    will-change: transform;
+    z-index: 100000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include transition(all .01s $ease-out-circ .5s);
+    @include user-select(none);
+
+    &.disappear {
+        width: 0;
+        height: 0;
+
+        &:after {
+            @include transform(translate3d(-100%, 0, 0));
+        }
+
+        &:before {
+            @include transform(translate3d(100%, 0, 0));
+        }
+    }
+
+    &:after,
+    &:before {
+        will-change: transform;
+        content: '';
+        position: absolute;
+        top: 0;
+        display: block;
+        width: 51%;
+        height: 100%;
+        background: $light-color;
+        @include transition(all .5s $ease-out-circ);
+        @include transform(translate3d(0, 0, 0));
+    }
+
+    &:after {
+        left: 0;
+    }
+
+    &:before {
+        right: 0;
+    }
+}
+
+#status {
+    z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 7px;
+    background: $light-color;
+
+    .indeterminate {
+        background: $accent-color;
+    }
+}

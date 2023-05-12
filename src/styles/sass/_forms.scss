@@ -1,0 +1,64 @@
+#reservations,
+#contact {
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=date],
+    textarea {
+        border-bottom: 2px solid $white;
+        padding-left: 5px;
+        padding-right: 5px;
+
+        &:focus {
+            background-color: transparentize($white, .85);
+        }
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=tel],
+    input[type=date] {
+        @include box-sizing(border-box);
+    }
+
+    &.black-text {
+        input[type=text],
+        input[type=email],
+        input[type=tel],
+        input[type=date],
+        textarea {
+            border-bottom-color: $black;
+        }
+
+        label,
+        .select-wrapper .caret {
+            color: $black;
+        }
+    }
+
+    label,
+    .select-wrapper .caret {
+        color: $white;
+    }
+
+    button[type=submit] {
+        margin-top: 50px;
+    }
+}
+
+#reservations {
+    position: relative;
+    margin-top: -1px;
+}
+
+#contact {
+    padding-bottom: 0;
+
+    form {
+        margin-bottom: 100px;
+    }
+
+    #map {
+        height: 500px;
+    }
+}

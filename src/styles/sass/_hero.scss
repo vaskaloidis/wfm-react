@@ -1,0 +1,28 @@
+body.nav-fixed {
+    .big-logo {
+        display: none;
+    }
+}
+
+.big-logo {
+    z-index: 2;
+    text-align: center;
+    @include user-select(none);
+
+    img {
+        width: 100%;
+    }
+}
+
+#explore {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -22.5px;
+    background: $accent-color;
+
+    i {
+        @include transform(rotate(90deg));
+        color: $dark-color;
+    }
+}

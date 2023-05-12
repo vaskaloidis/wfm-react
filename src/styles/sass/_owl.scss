@@ -1,0 +1,70 @@
+.owl-carousel {
+    .owl-item > div {
+        background-position: center;
+        background-size: cover;
+    }
+
+    .owl-prev,
+    .owl-next {
+        width: 100px;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        @include display(flex);
+        @include align-items(center);
+        overflow: hidden;
+
+        @media #{$small-and-down} {
+            display: none !important;
+        }
+
+        i {
+            opacity: .75;
+            color: $white;
+            font-size: 24px;
+            text-shadow: 0 1px 3px transparentize($black, .75);
+            @include transition(all .3s $ease-out-circ);
+        }
+
+        &:hover {
+            i {
+                opacity: 1;
+                @include transform(translate3d(0, 0, 0));
+            }
+        }
+
+        &:active i {
+            color: $accent-color;
+        }
+    }
+
+    .owl-prev {
+        left: 0;
+        padding-left: 20px;
+
+        i {
+            @include transform(translate3d(-100px, 0, 0));
+        }
+    }
+
+    .owl-next {
+        @include justify-content(flex-end);
+        right: 0;
+        padding-right: 20px;
+
+        i {
+            @include transform(translate3d(100px, 0, 0));
+
+        }
+    }
+}
+
+.owl-section {
+    position: relative;
+    padding: 0;
+
+    .row,
+    p {
+        margin-bottom: 0;
+    }
+}

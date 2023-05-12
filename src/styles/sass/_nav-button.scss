@@ -1,0 +1,158 @@
+$icon-color: $base-color;
+
+@if ($color == 'yellow') {
+    $icon-color: $dark-color;
+}
+
+body.nav-fixed {
+    .nav-icon-container {
+        display: none;
+    }
+}
+
+.nav-icon-container {
+    z-index: 999;
+    position: fixed;
+    display: block;
+    width: 50px;
+    height: 50px;
+    top: 25px;
+    right: 25px;
+    cursor: pointer;
+    @include user-select(none);
+    @include transform(translate3d(0, 0, 0));
+    @include transition(all .5s $ease-out-circ);
+
+    @media #{$small-and-down} {
+        top: 10px;
+        right: 10px;
+    }
+
+    &.hidden {
+        @include transform(translate3d(120px, 0, 0));
+    }
+}
+
+.nav-icon {
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    margin-top: -2px;
+    margin-left: -15px;
+    background-color: $icon-color;
+    @include transition(background-color .2s $ease-out-circ);
+    border: 1px solid transparentize($white, .6);
+}
+
+.nav-icon:after,
+.nav-icon:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: $icon-color;
+    left: -1px;
+    @include transition(all .2s $ease-out-circ);
+    border: 1px solid transparentize($white, .6);
+}
+
+.nav-icon:after {
+    top: 9px;
+}
+
+.nav-icon:before {
+    top: -9px;
+}
+
+.nav-icon-container:hover .nav-icon:after {
+    top: 13px;
+    @include transition(all .2s $ease-out-circ);
+}
+
+.nav-icon-container:hover .nav-icon:before {
+    top: -13px;
+    @include transition(all .2s $ease-out-circ);
+}
+
+.nav-icon.transformed {
+    background-color: transparent;
+    border: none;
+}
+
+.nav-icon.transformed:after,
+.nav-icon.transformed:before {
+    top: 0;
+    left: 2px;
+    width: 26px;
+    @include transform-origin(50% 50%);
+    @include transition(all .15s $ease-out-circ);
+    border: none;
+}
+
+.nav-icon.transformed:after {
+    @include transform(rotate(45deg));
+}
+
+.nav-icon.transformed:before {
+    @include transform(rotate(-45deg));
+}
+
+.nav-icon-container:hover .nav-icon.transformed:after,
+.nav-icon-container:hover .nav-icon.transformed:before {
+    top: 0;
+    left: -1px;
+    width: 32px;
+    @include transition(all .15s $ease-out-circ);
+}
+
+@media #{$large-and-up} {
+    .nav-icon-container {
+        width: 100px;
+        height: 100px;
+    }
+
+    .nav-icon {
+        width: 60px;
+        height: 8px;
+        margin-top: -4px;
+        margin-left: -30px;
+    }
+
+    .nav-icon:after,
+    .nav-icon:before {
+        width: 60px;
+        height: 8px;
+    }
+
+    .nav-icon:after {
+        top: 18px;
+    }
+
+    .nav-icon:before {
+        top: -18px;
+    }
+
+    .nav-icon-container:hover .nav-icon:after {
+        top: 26px;
+    }
+
+    .nav-icon-container:hover .nav-icon:before {
+        top: -26px;
+    }
+
+    .nav-icon.transformed:after,
+    .nav-icon.transformed:before {
+        left: 4px;
+        width: 52px;
+    }
+
+    .nav-icon-container:hover .nav-icon.transformed:after,
+    .nav-icon-container:hover .nav-icon.transformed:before {
+        left: -2px;
+        width: 64px;
+    }
+}
